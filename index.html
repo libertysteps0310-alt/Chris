@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeatherHelp — Instagram Growth Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --espresso:#241910;
+    --espresso-2:#33241702;
+    --leather:#8a4b2a;
+    --leather-deep:#6e3a20;
+    --tan:#c6884f;
+    --buff:#e6cda8;
+    --parchment:#f3ead9;
+    --parchment-2:#ece0cb;
+    --profit:#3f6b4f;
+    --profit-bright:#4f8a64;
+    --brass:#b07d2b;
+    --ink:#2a1f16;
+    --ink-soft:#5a4a3a;
+    --line:#d8c6a8;
+    --white:#fffaf2;
+    --shadow:rgba(45,28,12,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--parchment);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  /* subtle leather grain */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(138,75,42,.05), transparent 40%),
+      radial-gradient(circle at 85% 70%, rgba(63,107,79,.05), transparent 45%);
+  }
+  .wrap{position:relative;z-index:1}
+
+  /* ---------- TYPE ---------- */
+  h1,h2,h3,h4,.display{font-family:'Bitter',serif;}
+  .mono,.eyebrow,.tag,.pill,.col,.slidenum{font-family:'IBM Plex Mono',monospace;}
+  .eyebrow{
+    font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--leather);font-weight:600;display:inline-block;margin-bottom:.9rem;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(36,25,16,.96);
+    backdrop-filter:blur(8px);
+    border-bottom:2px dashed var(--tan);
+  }
+  .nav-inner{
+    max-width:1180px;margin:0 auto;padding:.7rem 1.25rem;
+    display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:space-between;
+  }
+  .brand{display:flex;align-items:center;gap:.6rem;color:var(--white);font-family:'Bitter',serif;font-weight:800;font-size:1.1rem;letter-spacing:.01em}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--tan);box-shadow:0 0 0 3px rgba(198,136,79,.25)}
+  .nav-links{display:flex;gap:.2rem;flex-wrap:wrap}
+  .nav-links a{
+    color:var(--buff);text-decoration:none;font-family:'IBM Plex Mono',monospace;
+    font-size:.74rem;letter-spacing:.04em;padding:.4rem .6rem;border-radius:6px;transition:.2s;white-space:nowrap;
+  }
+  .nav-links a:hover{color:var(--white);background:rgba(198,136,79,.18)}
+
+  /* ---------- LAYOUT ---------- */
+  section{padding:5rem 1.25rem;border-bottom:2px dashed var(--line)}
+  .container{max-width:1180px;margin:0 auto}
+  .sec-head{margin-bottom:2.6rem;max-width:820px}
+  .sec-head h2{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.08;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+  .sec-head .sub{margin-top:.9rem;color:var(--ink-soft);font-size:1.02rem}
+  .secnum{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--profit);font-weight:600;letter-spacing:.18em}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;background:var(--espresso);color:var(--white);
+    padding:5.5rem 1.25rem 5rem;border-bottom:2px dashed var(--tan);overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:14px;border:1.5px dashed rgba(198,136,79,.35);
+    border-radius:18px;pointer-events:none;
+  }
+  .hero-inner{max-width:1180px;margin:0 auto;position:relative}
+  .hero .eyebrow{color:var(--tan)}
+  .hero h1{
+    font-size:clamp(2.4rem,7vw,5rem);line-height:1.02;font-weight:900;letter-spacing:-.02em;
+    color:var(--white);max-width:14ch;
+  }
+  .hero h1 .accent{color:var(--tan)}
+  .hero h1 .gold{color:var(--profit-bright)}
+  .hero .lede{margin-top:1.6rem;max-width:60ch;font-size:1.12rem;color:var(--buff)}
+  .hero .meta{margin-top:2.4rem;display:flex;gap:.6rem;flex-wrap:wrap}
+  .hero .meta .pill{
+    font-size:.74rem;letter-spacing:.05em;border:1.5px dashed rgba(198,136,79,.5);
+    padding:.5rem .9rem;border-radius:50px;color:var(--buff);
+  }
+  .hero .goalbox{
+    margin-top:2.6rem;background:rgba(255,255,255,.04);border-left:4px solid var(--profit-bright);
+    padding:1.2rem 1.4rem;border-radius:0 10px 10px 0;max-width:62ch;
+  }
+  .hero .goalbox .lab{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.2em;color:var(--tan);text-transform:uppercase}
+  .hero .goalbox p{margin-top:.4rem;color:var(--white);font-size:1.04rem}
+
+  /* ---------- CARDS / STITCH ---------- */
+  .card{
+    background:var(--white);border-radius:14px;padding:1.6rem;position:relative;
+    box-shadow:0 2px 0 var(--line),0 10px 30px -18px var(--shadow);
+  }
+  .stitched{position:relative}
+  .stitched::before{
+    content:"";position:absolute;inset:9px;border:1.5px dashed var(--line);border-radius:9px;pointer-events:none;
+  }
+  .grid{display:grid;gap:1.2rem}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+  .tag{
+    display:inline-block;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+    padding:.28rem .6rem;border-radius:50px;font-weight:600;
+  }
+  .tag.rec{background:var(--profit);color:var(--white)}
+  .tag.lead{background:var(--leather);color:var(--white)}
+  .tag.fmt{background:var(--buff);color:var(--leather-deep)}
+  .tag.green{background:rgba(63,107,79,.14);color:var(--profit)}
+
+  ul.clean{list-style:none}
+  ul.clean li{padding:.32rem 0 .32rem 1.5rem;position:relative;color:var(--ink-soft)}
+  ul.clean li::before{content:"";position:absolute;left:0;top:.95em;width:8px;height:2px;background:var(--tan)}
+  ul.check li{padding:.34rem 0 .34rem 1.7rem;position:relative;list-style:none;color:var(--ink)}
+  ul.check li::before{content:"✓";position:absolute;left:0;top:.05em;color:var(--profit-bright);font-weight:700}
+
+  .lab{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--leather);display:block;margin-bottom:.4rem;font-weight:600}
+  .lab.profit{color:var(--profit)}
+
+  /* ---------- PHONE (bio) ---------- */
+  .phones{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem}
+  @media(max-width:760px){.phones{grid-template-columns:1fr}}
+  .phone{
+    background:var(--espresso);border-radius:26px;padding:1.4rem 1.2rem;color:var(--white);
+    position:relative;box-shadow:0 18px 40px -20px rgba(36,25,16,.7);
+  }
+  .phone .notch{width:42%;height:6px;border-radius:6px;background:rgba(255,255,255,.18);margin:0 auto 1.2rem}
+  .phone .ig-handle{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--tan);text-align:center;margin-bottom:.2rem}
+  .phone .bio-title{font-family:'Bitter',serif;font-weight:800;font-size:1.18rem;text-align:center;line-height:1.25;margin:.5rem 0 .8rem}
+  .phone .bio-line{text-align:center;font-size:.95rem;color:var(--buff);line-height:1.45}
+  .phone .bio-line.lead{color:var(--white);font-weight:500}
+  .phone .bio-checks{margin:.9rem 0;display:flex;flex-direction:column;gap:.3rem;align-items:center}
+  .phone .bio-checks span{font-size:.92rem}
+  .phone .link{margin-top:.6rem;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--profit-bright)}
+  .phone .start{display:block;text-align:center;margin-top:.4rem;color:var(--buff);font-size:.95rem}
+
+  /* ---------- SLIDES (carousels) ---------- */
+  .pin{margin-top:2.2rem}
+  .pin-head{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.4rem}
+  .pin-head h3{font-size:1.5rem;font-weight:800;color:var(--leather-deep)}
+  .pin-meta{display:flex;gap:.6rem;flex-wrap:wrap;margin:.5rem 0 1.4rem;align-items:center}
+  .purpose{color:var(--ink-soft);font-style:italic}
+  .slides{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  @media(max-width:900px){.slides{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.slides{grid-template-columns:1fr}}
+  .slide{
+    background:linear-gradient(160deg,var(--leather),var(--leather-deep));
+    color:var(--white);border-radius:12px;padding:1.2rem 1.1rem;min-height:140px;
+    display:flex;flex-direction:column;position:relative;overflow:hidden;
+  }
+  .slide.alt{background:linear-gradient(160deg,#33241a,#241910)}
+  .slide .slidenum{font-size:.7rem;letter-spacing:.15em;color:var(--buff);opacity:.85}
+  .slide .stxt{margin-top:auto;font-family:'Bitter',serif;font-weight:700;font-size:1.02rem;line-height:1.28;white-space:pre-line}
+  .slide ul{list-style:none;margin-top:.7rem}
+  .slide ul li{font-size:.95rem;padding:.12rem 0}
+  .caption-box{
+    margin-top:1.2rem;background:var(--parchment-2);border-radius:12px;padding:1.4rem 1.5rem;position:relative;
+  }
+  .caption-box .lab{color:var(--profit)}
+  .caption-box p{margin:.55rem 0;color:var(--ink)}
+  .caption-box ul.clean li{color:var(--ink)}
+
+  /* ---------- HIGHLIGHTS ---------- */
+  .hl{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  @media(max-width:900px){.hl{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.hl{grid-template-columns:1fr}}
+  .hl-item{background:var(--white);border-radius:12px;padding:1.2rem;border-top:4px solid var(--tan)}
+  .hl-item h4{font-size:1.05rem;font-weight:800;color:var(--leather-deep);margin-bottom:.6rem;letter-spacing:.02em}
+  .hl-item ul{list-style:none}
+  .hl-item li{font-size:.9rem;color:var(--ink-soft);padding:.2rem 0;position:relative;padding-left:1.1rem}
+  .hl-item li::before{content:"→";position:absolute;left:0;color:var(--tan);font-weight:700}
+
+  /* ---------- DATA / accounts ---------- */
+  .acct{background:var(--white);border-radius:12px;padding:1.3rem 1.4rem;border-left:4px solid var(--leather)}
+  .acct .handle{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--leather-deep);font-size:1.05rem}
+  .acct .why-lab{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--profit);margin:.7rem 0 .3rem}
+  .acct p{color:var(--ink-soft);font-size:.94rem;line-height:1.5}
+
+  .terms{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+  .terms .term{font-family:'IBM Plex Mono',monospace;font-size:.74rem;background:var(--parchment-2);color:var(--leather-deep);padding:.3rem .55rem;border-radius:6px}
+
+  /* mix bars */
+  .mix{display:flex;flex-direction:column;gap:.7rem}
+  .mix-row{display:grid;grid-template-columns:60px 1fr;align-items:center;gap:.9rem}
+  .mix-row .pct{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--leather-deep);font-size:.95rem}
+  .mix-bar{height:34px;border-radius:7px;background:var(--parchment-2);position:relative;overflow:hidden}
+  .mix-fill{height:100%;display:flex;align-items:center;padding:0 .8rem;color:var(--white);font-size:.84rem;font-weight:500;white-space:nowrap;border-radius:7px}
+
+  /* day cards */
+  .days{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  @media(max-width:900px){.days{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:580px){.days{grid-template-columns:1fr}}
+  .day{background:var(--white);border-radius:12px;padding:1.2rem;position:relative;border-top:3px solid var(--buff);transition:.2s}
+  .day:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px var(--shadow)}
+  .day .dnum{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;color:var(--leather);font-weight:600}
+  .day h4{font-size:1.02rem;font-weight:700;color:var(--ink);margin:.5rem 0 .7rem;line-height:1.25}
+  .day .row{font-size:.86rem;margin:.28rem 0;color:var(--ink-soft)}
+  .day .row b{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--leather);font-weight:600;display:inline-block;min-width:62px}
+  .day .cta{margin-top:.7rem;display:inline-block;font-size:.78rem;background:var(--profit);color:var(--white);padding:.3rem .7rem;border-radius:50px;font-family:'IBM Plex Mono',monospace}
+  .opts{display:flex;gap:.4rem;margin-top:.2rem}
+  .opts span{font-size:.78rem;background:var(--parchment-2);padding:.1rem .55rem;border-radius:5px;color:var(--leather-deep)}
+
+  /* caption posts */
+  .cap{background:var(--white);border-radius:14px;padding:1.6rem 1.7rem;position:relative;border-left:4px solid var(--tan)}
+  .cap .dnum{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;color:var(--profit);font-weight:600}
+  .cap h4{font-size:1.22rem;font-weight:800;color:var(--leather-deep);margin:.4rem 0 1rem;line-height:1.2}
+  .cap p{margin:.55rem 0;color:var(--ink)}
+  .cap ul.clean li,.cap ul.check li{margin:.1rem 0}
+  .hashtags{margin-top:1rem;font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--leather);line-height:1.7;word-spacing:.1em}
+
+  /* DM chat */
+  .scripts{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+  @media(max-width:820px){.scripts{grid-template-columns:1fr}}
+  .script{background:var(--white);border-radius:14px;padding:1.4rem;position:relative}
+  .script .shead{display:flex;align-items:center;gap:.7rem;margin-bottom:.4rem;flex-wrap:wrap}
+  .script .snum{width:30px;height:30px;border-radius:50%;background:var(--espresso);color:var(--tan);display:grid;place-items:center;font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:600;flex:none}
+  .script h4{font-size:1rem;font-weight:800;color:var(--leather-deep);letter-spacing:.02em}
+  .trig{font-size:.86rem;color:var(--ink-soft);font-style:italic;margin:.5rem 0 .9rem}
+  .bubble{background:var(--parchment-2);border-radius:14px 14px 14px 4px;padding:.85rem 1rem;margin:.5rem 0;font-size:.92rem;color:var(--ink);white-space:pre-line;line-height:1.5}
+  .branch{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--profit);margin:.9rem 0 .2rem;font-weight:600}
+  .branch.warm{color:var(--brass)}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:.9rem}
+  @media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--espresso);color:var(--white);border-radius:12px;padding:1.2rem;position:relative}
+  .step .snum{font-family:'IBM Plex Mono',monospace;font-size:1.5rem;font-weight:600;color:var(--tan)}
+  .step h4{margin:.3rem 0 .6rem;font-size:1rem;color:var(--white)}
+  .step p,.step li{font-size:.86rem;color:var(--buff)}
+  .step ul{list-style:none;margin-top:.3rem}
+  .step ul li{padding:.12rem 0}
+
+  /* tracker columns */
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  @media(max-width:820px){.cols{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.cols{grid-template-columns:1fr}}
+  .col-card{background:var(--white);border-radius:10px;padding:1rem 1.1rem;border-top:3px solid var(--profit)}
+  .col-card .cname{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--leather-deep);font-size:.9rem;margin-bottom:.5rem}
+  .col-card .opts2{display:flex;flex-wrap:wrap;gap:.35rem}
+  .col-card .opts2 span{font-size:.76rem;background:var(--parchment-2);padding:.2rem .5rem;border-radius:5px;color:var(--ink-soft)}
+
+  .kpi{display:flex;flex-wrap:wrap;gap:.55rem}
+  .kpi span{font-family:'IBM Plex Mono',monospace;font-size:.82rem;background:var(--white);border:1.5px dashed var(--line);padding:.45rem .8rem;border-radius:8px;color:var(--leather-deep)}
+
+  .lede-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+  .lede-list span{font-size:.86rem;background:var(--white);padding:.4rem .8rem;border-radius:50px;color:var(--ink-soft);box-shadow:0 1px 0 var(--line)}
+
+  .callout{background:rgba(63,107,79,.1);border-radius:12px;padding:1.2rem 1.4rem;border-left:4px solid var(--profit);margin-top:1.4rem}
+  .callout .lab{color:var(--profit)}
+  .callout p{color:var(--ink)}
+
+  footer{background:var(--espresso);color:var(--buff);padding:3rem 1.25rem;text-align:center;border-top:2px dashed var(--tan)}
+  footer .brand{justify-content:center;margin-bottom:.6rem}
+  footer p{font-size:.85rem;opacity:.8}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.day:hover{transform:none}}
+
+  a:focus-visible,button:focus-visible{outline:3px solid var(--profit-bright);outline-offset:2px;border-radius:4px}
+
+  .mt{margin-top:2.2rem}
+  .mtl{margin-top:1.2rem}
+  h3.block{font-size:1.35rem;font-weight:800;color:var(--leather-deep);margin:2.4rem 0 1.1rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="brand"><span class="dot"></span>LeatherHelp</div>
+    <div class="nav-links">
+      <a href="#bio">Bio</a>
+      <a href="#pinned">Pinned Posts</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#research">Research</a>
+      <a href="#calendar">30-Day Calendar</a>
+      <a href="#captions">Captions</a>
+      <a href="#dms">DM System</a>
+      <a href="#outreach">Outreach</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Instagram Growth Playbook</span>
+    <h1>Turn Damaged Leather Into <span class="gold">Profit</span></h1>
+    <p class="lede">A complete strategy for positioning Chris Repp as the authority for furniture flippers and service businesses — built from more than 30 years of real-world leather repair experience.</p>
+    <div class="meta">
+      <span class="pill">Bio Optimization</span>
+      <span class="pill">Competitor Research</span>
+      <span class="pill">30-Day Content Calendar</span>
+      <span class="pill">Captions</span>
+      <span class="pill">DM System &amp; Outreach</span>
+    </div>
+    <div class="goalbox">
+      <span class="lab">Current Goal</span>
+      <p>Position Chris as the authority for furniture flippers and service businesses while clearly selling the course.</p>
+    </div>
+  </div>
+</header>
+
+<!-- SECTION 1: BIO -->
+<section id="bio">
+  <div class="container">
+    <div class="sec-head">
+      <span class="secnum">SECTION 01</span>
+      <h2>Instagram Bio Optimization</h2>
+      <p class="sub">Two bio directions plus an optimized name field to improve search visibility and sell the course.</p>
+    </div>
+
+    <div class="phones">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="ig-handle">@leatherhelp</div>
+        <div style="text-align:center;margin:.4rem 0 .8rem"><span class="tag rec">Bio Option #1 — Recommended</span></div>
+        <div class="bio-title">Turn Damaged Leather Into Profit 💰</div>
+        <div class="bio-line lead">Helping Furniture Flippers &amp; Service Pros</div>
+        <div class="bio-line lead">Increase Profits With Leather Repair</div>
+        <div class="bio-checks">
+          <span>✓ 30+ Years Experience</span>
+          <span>✓ Training &amp; Coaching</span>
+          <span>✓ Free Resources Below</span>
+        </div>
+        <div class="start">👇 Start Here</div>
+        <div class="link">(Link)</div>
+      </div>
+
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="ig-handle">@leatherhelp</div>
+        <div style="text-align:center;margin:.4rem 0 .8rem"><span class="tag fmt">Bio Option #2</span></div>
+        <div class="bio-title">Learn Leather Repair From A 30-Year Pro</div>
+        <div class="bio-line">For Furniture Flippers, Resellers &amp; Service Businesses</div>
+        <div class="bio-checks">
+          <span>💰 Increase Profits</span>
+          <span>🛠 Learn Repair Skills</span>
+          <span>🎓 Training &amp; Coaching</span>
+        </div>
+        <div class="start">👇 Free Resources &amp; Course</div>
+        <div class="link">(Link)</div>
+      </div>
+    </div>
+
+    <div class="card stitched mt">
+      <span class="lab">Name Field</span>
+      <div class="grid g3 mtl" style="gap:1.4rem">
+        <div>
+          <span class="lab profit">Current</span>
+          <p style="font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink)">LeatherHelp</p>
+        </div>
+        <div>
+          <span class="lab profit">Suggested</span>
+          <p style="font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--leather-deep)">Chris Repp | Leather Repair</p>
+          <p style="text-align:left;color:var(--ink-soft);font-size:.85rem;margin:.3rem 0">OR</p>
+          <p style="font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--leather-deep)">LeatherHelp | Furniture Flipping</p>
+        </div>
+        <div>
+          <span class="lab profit">Reason</span>
+          <p style="color:var(--ink-soft)">Improves Instagram search visibility.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: PINNED POSTS -->
+<section id="pinned">
+  <div class="container">
+    <div class="sec-head">
+      <span class="secnum">SECTION 02</span>
+      <h2>Pinned Posts</h2>
+      <p class="sub">Three pinned carousels that tell new visitors who the page is for, build authority, and sell the ROI.</p>
+    </div>
+
+    <!-- PINNED 1 -->
+    <div class="pin">
+      <div class="pin-head"><span class="tag lead">Pinned Post #1</span><h3>START HERE</h3></div>
+      <div class="card stitched">
+        <span class="lab">Purpose</span>
+        <p style="color:var(--ink-soft);margin-bottom:.4rem">Every new visitor should immediately understand:</p>
+        <ul class="clean">
+          <li>Who this page is for</li>
+          <li>What Chris teaches</li>
+          <li>Why they should follow</li>
+        </ul>
+      </div>
+      <div class="pin-meta mt"><span class="tag fmt">Format · Carousel (8 Slides)</span></div>
+      <div class="slides">
+        <div class="slide"><span class="slidenum">SLIDE 1</span><div class="stxt">START HERE
+Learn How To Turn
+Leather Repair Into Profit</div></div>
+        <div class="slide"><span class="slidenum">SLIDE 2</span><div class="stxt">WHO IS THIS FOR?</div>
+          <ul><li>✓ Furniture Flippers</li><li>✓ Resellers</li><li>✓ Furniture Stores</li><li>✓ Side Hustlers</li></ul></div>
+        <div class="slide"><span class="slidenum">SLIDE 3</span><div class="stxt">Do You Ever Skip
+Damaged Leather Furniture?
+You Could Be Leaving
+Hundreds Of Dollars Behind.</div></div>
+        <div class="slide"><span class="slidenum">SLIDE 4</span><div class="stxt">I Teach People How To</div>
+          <ul><li>✓ Identify Value</li><li>✓ Repair Leather</li><li>✓ Increase Resale Value</li><li>✓ Make More Profit</li></ul></div>
+        <div class="slide"><span class="slidenum">SLIDE 5</span><div class="stxt">Already Own A Business?
+Leather Repair Can Become
+An Additional Revenue Stream.</div></div>
+        <div class="slide"><span class="slidenum">SLIDE 6</span><div class="stxt">What You'll Find Here
+Before &amp; Afters
+Profit Breakdowns
+Repair Tips
+Business Advice</div></div>
+        <div class="slide"><span class="slidenum">SLIDE 7</span><div class="stxt">30+ Years
+Of Real Experience
+Not Theory.
+Real Projects.
+Real Results.</div></div>
+        <div class="slide"><span class="slidenum">SLIDE 8</span><div class="stxt">Ready To Learn?
+Visit The Link In Bio
+To Access Free Resources
+And Training</div></div>
+      </div>
+      <div class="caption-box stitched">
+        <span class="lab">Caption</span>
+        <p>Welcome to LeatherHelp.</p>
+        <p>If you're a furniture flipper, reseller, detailer, cleaner, restoration professional, or someone looking for an additional income stream, you're in the right place.</p>
+        <p>For more than 30 years I've been helping people understand, repair, restore, and profit from leather.</p>
+        <p>On this page you'll learn:</p>
+        <ul class="clean">
+          <li>Leather repair techniques</li>
+          <li>Furniture flipping strategies</li>
+          <li>Business opportunities</li>
+          <li>Real-world case studies</li>
+          <li>Profit-focused advice</li>
+        </ul>
+        <p>Follow along and check out the resources in the link in my bio.</p>
+      </div>
+    </div>
+
+    <!-- PINNED 2 -->
+    <div class="pin">
+      <div class="pin-head"><span class="tag lead">Pinned Post #2</span><h3>MY STORY</h3></div>
+      <div class="card stitched">
+        <span class="lab">Purpose</span>
+        <p class="purpose">Build trust and authority.</p>
+      </div>
+      <div class="pin-meta mt"><span class="tag fmt">Format · Carousel</span></div>
+      <div class="slides">
+        <div class="slide alt"><span class="slidenum">SLIDE 1</span><div class="stxt">HOW I BUILT
+A CAREER IN LEATHER</div></div>
+        <div class="slide alt"><span class="slidenum">SLIDE 2</span><div class="stxt">Most People See
+Damaged Leather.
+I See Opportunity.</div></div>
+        <div class="slide alt"><span class="slidenum">SLIDE 3</span><div class="stxt">For More Than 30 Years
+I've Worked With Leather
+Every Single Day.</div></div>
+        <div class="slide alt"><span class="slidenum">SLIDE 4</span><div class="stxt">I've Repaired
+Furniture
+Automotive Leather
+Commercial Projects
+Luxury Pieces</div></div>
+        <div class="slide alt"><span class="slidenum">SLIDE 5</span><div class="stxt">Over The Years
+I've Seen Every Problem.
+Every Mistake.
+Every Shortcut.</div></div>
+        <div class="slide alt"><span class="slidenum">SLIDE 6</span><div class="stxt">That's Why I Started Teaching.
+To Help Others Learn
+Faster Than I Did.</div></div>
+        <div class="slide alt"><span class="slidenum">SLIDE 7</span><div class="stxt">Today I Help
+Furniture Flippers
+Resellers
+Service Businesses
+Increase Their Profits.</div></div>
+        <div class="slide alt"><span class="slidenum">SLIDE 8</span><div class="stxt">My Goal Is Simple:
+Help More People
+Turn Leather Skills
+Into Income.</div></div>
+      </div>
+      <div class="caption-box stitched">
+        <span class="lab">Caption</span>
+        <p>Most people know me as the owner of LeatherHelp.</p>
+        <p>But before there was a course, coaching, or online training, there were decades of real-world projects.</p>
+        <p>I've spent more than 30 years repairing, restoring, cleaning, and refinishing leather.</p>
+        <p>Along the way I learned that leather repair isn't just a skill.</p>
+        <p>It's a business opportunity.</p>
+        <p>That's why I created training programs for furniture flippers, resellers, and service businesses who want to increase profits and create additional income streams.</p>
+        <p>If you're ready to learn from real-world experience, you're in the right place.</p>
+      </div>
+    </div>
+
+    <!-- PINNED 3 -->
+    <div class="pin">
+      <div class="pin-head"><span class="tag lead">Pinned Post #3</span><h3>ONE REPAIR PAID FOR THE COURSE</h3></div>
+      <div class="card stitched">
+        <span class="lab">Purpose</span>
+        <p class="purpose">Sell the ROI.</p>
+      </div>
+      <div class="pin-meta mt"><span class="tag fmt">Format · Carousel</span></div>
+      <div class="slides">
+        <div class="slide"><span class="slidenum">SLIDE 1</span><div class="stxt">ONE REPAIR
+PAID FOR THE COURSE</div></div>
+        <div class="slide"><span class="slidenum">SLIDE 2</span><div class="stxt">Course Cost
+$700</div></div>
+        <div class="slide"><span class="slidenum">SLIDE 3</span><div class="stxt">One Leather Project
+Can Generate
+Hundreds Of Dollars</div></div>
+        <div class="slide"><span class="slidenum">SLIDE 4</span><div class="stxt">Example:
+Bought Cheap
+Repaired Leather
+Sold For More</div></div>
+        <div class="slide"><span class="slidenum">SLIDE 5</span><div class="stxt">The Difference?
+Knowing What To Look For.</div></div>
+        <div class="slide"><span class="slidenum">SLIDE 6</span><div class="stxt">The Difference?
+Knowing How To Repair It.</div></div>
+        <div class="slide"><span class="slidenum">SLIDE 7</span><div class="stxt">The Difference?
+Knowing How To Profit.</div></div>
+        <div class="slide"><span class="slidenum">SLIDE 8</span><div class="stxt">That's What
+I Teach Inside The Course.</div></div>
+      </div>
+      <div class="caption-box stitched">
+        <span class="lab">Caption</span>
+        <p>One of the biggest objections I hear is:</p>
+        <p>"The course costs too much."</p>
+        <p>But the better question is:</p>
+        <p>How much profit could one repair create?</p>
+        <p>For furniture flippers and service businesses, one project can often recover the investment many times over.</p>
+        <p>The goal isn't simply learning leather repair.</p>
+        <p>The goal is learning how to use that skill to create more profit opportunities.</p>
+        <p>That's exactly what I teach inside the course.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights">
+  <div class="container">
+    <div class="sec-head">
+      <span class="secnum">SECTION 03</span>
+      <h2>Highlight Structure</h2>
+      <p class="sub">Eight story highlights that organize the page around what visitors are looking for.</p>
+    </div>
+    <div class="hl">
+      <div class="hl-item"><h4>START HERE</h4><ul><li>Introduction</li><li>Who Chris Helps</li><li>What To Expect</li></ul></div>
+      <div class="hl-item"><h4>COURSE</h4><ul><li>Course Overview</li><li>Modules</li><li>Pricing</li><li>FAQ</li></ul></div>
+      <div class="hl-item"><h4>RESULTS</h4><ul><li>Student Wins</li><li>Testimonials</li><li>Success Stories</li></ul></div>
+      <div class="hl-item"><h4>PROFITS</h4><ul><li>Profit Breakdowns</li><li>Furniture Flips</li><li>ROI Examples</li></ul></div>
+      <div class="hl-item"><h4>REPAIRS</h4><ul><li>Before &amp; Afters</li><li>Restoration Projects</li><li>Leather Transformations</li></ul></div>
+      <div class="hl-item"><h4>FREEBIES</h4><ul><li>Free PDF</li><li>Free Videos</li><li>Podcast Links</li></ul></div>
+      <div class="hl-item"><h4>COMMUNITY</h4><ul><li>Private Instagram Group</li><li>Community Benefits</li><li>How To Join</li></ul></div>
+      <div class="hl-item"><h4>FAQ</h4><ul><li>Most Common Questions</li><li>Pricing Questions</li><li>Time Commitment Questions</li><li>Beginner Questions</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <div class="sec-head">
+      <span class="secnum">SECTION 04</span>
+      <h2>Competitor &amp; Inspiration Research</h2>
+      <p class="sub">The goal is not to copy these accounts. The goal is to analyze:</p>
+    </div>
+    <div class="lede-list" style="margin-top:-1.2rem;margin-bottom:2.4rem">
+      <span>Content styles</span><span>Hooks</span><span>Reels</span><span>Community building</span><span>Storytelling</span><span>Lead generation strategies</span><span>Collaboration opportunities</span>
+    </div>
+
+    <div class="grid g2">
+      <div class="card stitched">
+        <span class="tag green">Category 1</span>
+        <h3 style="margin:.6rem 0 .2rem;font-size:1.3rem;color:var(--leather-deep)">FURNITURE FLIPPERS</h3>
+        <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:.8rem">These accounts attract the exact audience we want:</p>
+        <span class="lab">Target Audience</span>
+        <ul class="clean"><li>Furniture Flippers</li><li>Furniture Resellers</li><li>Side Hustlers</li></ul>
+        <span class="lab mtl">Research Focus</span>
+        <ul class="clean"><li>Before &amp; after videos</li><li>Profit breakdowns</li><li>Furniture sourcing</li><li>Buyer psychology</li><li>Transformation content</li></ul>
+        <span class="lab mtl">Potential Search Terms</span>
+        <div class="terms"><span class="term">#furnitureflipper</span><span class="term">#furnitureflip</span><span class="term">#furnitureflipping</span><span class="term">#furniturereseller</span><span class="term">#furniturerestoration</span></div>
+      </div>
+
+      <div class="card stitched">
+        <span class="tag green">Category 2</span>
+        <h3 style="margin:.6rem 0 .8rem;font-size:1.3rem;color:var(--leather-deep)">LEATHER REPAIR</h3>
+        <span class="lab">Target Audience</span>
+        <p style="color:var(--ink-soft)">People actively interested in leather.</p>
+        <span class="lab mtl">Research Focus</span>
+        <ul class="clean"><li>Educational content</li><li>Repair demonstrations</li><li>Authority building</li><li>Customer transformations</li></ul>
+        <span class="lab mtl">Potential Search Terms</span>
+        <div class="terms"><span class="term">#leatherrepair</span><span class="term">#leatherrestoration</span><span class="term">#leathercare</span><span class="term">#leathercleaning</span></div>
+      </div>
+
+      <div class="card stitched">
+        <span class="tag green">Category 3</span>
+        <h3 style="margin:.6rem 0 .8rem;font-size:1.3rem;color:var(--leather-deep)">DETAILING INDUSTRY</h3>
+        <span class="lab">Target Audience</span>
+        <p style="color:var(--ink-soft)">Business owners who could add leather repair services.</p>
+        <span class="lab mtl">Research Focus</span>
+        <ul class="clean"><li>Service upsells</li><li>Business growth</li><li>Customer education</li><li>Authority positioning</li></ul>
+        <span class="lab mtl">Potential Search Terms</span>
+        <div class="terms"><span class="term">#autodetailing</span><span class="term">#mobiledetailing</span><span class="term">#boatdetailing</span><span class="term">#interiordetailing</span></div>
+      </div>
+
+      <div class="card stitched">
+        <span class="tag green">Category 4</span>
+        <h3 style="margin:.6rem 0 .8rem;font-size:1.3rem;color:var(--leather-deep)">FURNITURE RESTORATION</h3>
+        <span class="lab">Target Audience</span>
+        <p style="color:var(--ink-soft)">People already restoring furniture.</p>
+        <span class="lab mtl">Research Focus</span>
+        <ul class="clean"><li>Restoration videos</li><li>Process content</li><li>Educational content</li><li>Before &amp; afters</li></ul>
+        <span class="lab mtl">Potential Search Terms</span>
+        <div class="terms"><span class="term">#furniturerestoration</span><span class="term">#furnituremakeover</span><span class="term">#furniturerepair</span></div>
+      </div>
+    </div>
+
+    <h3 class="block">High Priority Accounts To Study</h3>
+    <div class="grid g3">
+      <div class="acct"><span class="handle">@thefliphut</span><div class="why-lab">Why</div><p>Strong furniture flipping content. Excellent transformation storytelling. Good profit-focused content.</p></div>
+      <div class="acct"><span class="handle">@blacktailstudio</span><div class="why-lab">Why</div><p>Strong authority positioning. Excellent educational content. Great personal brand structure.</p></div>
+      <div class="acct"><span class="handle">@furnitureflipchallenge</span><div class="why-lab">Why</div><p>Large furniture flipping audience. Strong community engagement. Excellent user-generated content opportunities.</p></div>
+      <div class="acct"><span class="handle">@furnitureflippingteacher</span><div class="why-lab">Why</div><p>Educational style content. Potential inspiration for course marketing.</p></div>
+      <div class="acct"><span class="handle">@wiseowlfurniture</span><div class="why-lab">Why</div><p>Furniture restoration audience. Strong before-and-after content.</p></div>
+      <div class="acct"><span class="handle">@furnitureflippingexpert</span><div class="why-lab">Why</div><p>Profit-focused audience. Furniture flipping education.</p></div>
+    </div>
+
+    <h3 class="block">Influencer Partnership Targets</h3>
+    <div class="grid g2">
+      <div class="card stitched">
+        <span class="lab">Ideal Partnership Profiles</span>
+        <ul class="clean">
+          <li>Furniture flippers with 10k–100k followers</li>
+          <li>Furniture resellers</li>
+          <li>Furniture restoration creators</li>
+          <li>Cleaning professionals</li>
+          <li>Auto detailers</li>
+          <li>Marine detailers</li>
+          <li>Home service creators</li>
+        </ul>
+      </div>
+      <div class="card stitched">
+        <span class="lab profit">Partnership Ideas</span>
+        <ul class="clean">
+          <li>Joint Instagram Lives</li>
+          <li>Collaborative Reels</li>
+          <li>Guest Interviews</li>
+          <li>Case Studies</li>
+          <li>Shared Giveaways</li>
+          <li>Community Features</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="block">Content Types We Should Model</h3>
+    <div class="grid g4">
+      <div class="day"><span class="dnum">01</span><h4 style="margin-bottom:0">Before &amp; After Transformations</h4></div>
+      <div class="day"><span class="dnum">02</span><h4 style="margin-bottom:0">Profit Breakdown Videos</h4></div>
+      <div class="day"><span class="dnum">03</span><h4 style="margin-bottom:0">Mistake Videos</h4></div>
+      <div class="day"><span class="dnum">04</span><h4 style="margin-bottom:0">Industry Myths</h4></div>
+      <div class="day"><span class="dnum">05</span><h4 style="margin-bottom:0">Student Success Stories</h4></div>
+      <div class="day"><span class="dnum">06</span><h4 style="margin-bottom:0">Day-In-The-Life Content</h4></div>
+      <div class="day"><span class="dnum">07</span><h4 style="margin-bottom:0">Educational Carousels</h4></div>
+      <div class="day"><span class="dnum">08</span><h4 style="margin-bottom:0">Q&amp;A Videos</h4></div>
+      <div class="day"><span class="dnum">09</span><h4 style="margin-bottom:0">Business Opportunity Content</h4></div>
+      <div class="day"><span class="dnum">10</span><h4 style="margin-bottom:0">Case Studies</h4></div>
+    </div>
+
+    <h3 class="block">Monthly Research Process</h3>
+    <div class="card stitched">
+      <span class="lab">Weekly</span>
+      <ul class="clean">
+        <li>Review top-performing competitor content</li>
+        <li>Identify trending hooks</li>
+        <li>Save successful reels</li>
+        <li>Identify collaboration opportunities</li>
+        <li>Report findings</li>
+      </ul>
+      <div class="callout">
+        <span class="lab">Goal</span>
+        <p>Continuously improve content strategy while positioning LeatherHelp as the authority for Furniture Flippers and Service Businesses looking to profit from leather repair.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section id="calendar">
+  <div class="container">
+    <div class="sec-head">
+      <span class="secnum">SECTION 05</span>
+      <h2>30 Day Content Calendar</h2>
+      <p class="sub">A full month of feed posts, reels, and stories — balanced across profit, transformations, education, and proof.</p>
+    </div>
+
+    <div class="grid g2" style="align-items:start">
+      <div class="card stitched">
+        <span class="lab">Content Mix</span>
+        <div class="mix mtl">
+          <div class="mix-row"><span class="pct">40%</span><div class="mix-bar"><div class="mix-fill" style="width:100%;background:var(--leather)">Profit &amp; Business Opportunity</div></div></div>
+          <div class="mix-row"><span class="pct">25%</span><div class="mix-bar"><div class="mix-fill" style="width:72%;background:var(--tan)">Before &amp; After Transformations</div></div></div>
+          <div class="mix-row"><span class="pct">20%</span><div class="mix-bar"><div class="mix-fill" style="width:58%;background:var(--profit)">Education</div></div></div>
+          <div class="mix-row"><span class="pct">10%</span><div class="mix-bar"><div class="mix-fill" style="width:38%;background:var(--brass)">Student Success</div></div></div>
+          <div class="mix-row"><span class="pct">5%</span><div class="mix-bar"><div class="mix-fill" style="width:24%;background:var(--leather-deep)">Personal Brand</div></div></div>
+        </div>
+      </div>
+      <div class="card stitched">
+        <span class="lab profit">Posting Frequency</span>
+        <ul class="check mtl" style="font-size:1.05rem">
+          <li>4 Feed Posts Per Week</li>
+          <li>Daily Stories</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="block">The 30 Days</h3>
+    <div class="days">
+      <!-- 1 -->
+      <div class="day"><span class="dnum">DAY 1</span>
+        <h4>Why Most Furniture Flippers Ignore Their Most Profitable Opportunity</h4>
+        <div class="row"><b>Format</b> Carousel</div>
+        <div class="row"><b>Overlay</b> Most Furniture Flippers Skip The Most Profitable Furniture</div>
+        <div class="row"><b>Visual</b> Damaged leather couch with large profit numbers overlay</div>
+        <div class="row"><b>Goal</b> Attract furniture flippers</div>
+        <span class="cta">Comment "PROFIT"</span>
+      </div>
+      <!-- 2 -->
+      <div class="day"><span class="dnum">DAY 2</span>
+        <h4>Behind The Scenes Leather Repair Project</h4>
+        <div class="row"><b>Format</b> Stories</div>
+        <div class="row"><b>Visual</b> Raw work footage</div>
+        <div class="row"><b>Goal</b> Authority Building</div>
+      </div>
+      <!-- 3 -->
+      <div class="day"><span class="dnum">DAY 3</span>
+        <h4>Before &amp; After Leather Transformation</h4>
+        <div class="row"><b>Format</b> Reel</div>
+        <div class="row"><b>Hook</b> Would You Buy This Couch Now?</div>
+        <div class="row"><b>Visual</b> Strong before/after reveal</div>
+        <div class="row"><b>Goal</b> Trust</div>
+        <span class="cta">Follow For More</span>
+      </div>
+      <!-- 4 -->
+      <div class="day"><span class="dnum">DAY 4</span>
+        <h4>Do You Currently Flip Furniture?</h4>
+        <div class="row"><b>Format</b> Stories Poll</div>
+        <div class="row"><b>Options</b></div>
+        <div class="opts"><span>Yes</span><span>No</span></div>
+        <div class="row" style="margin-top:.5rem"><b>Goal</b> Audience Research</div>
+      </div>
+      <!-- 5 -->
+      <div class="day"><span class="dnum">DAY 5</span>
+        <h4>5 Signs A Leather Couch Is Worth Buying</h4>
+        <div class="row"><b>Format</b> Carousel</div>
+        <div class="row"><b>Overlay</b> Don't Buy A Leather Couch Until You Know These 5 Things</div>
+        <div class="row"><b>Visual</b> Real leather examples</div>
+        <div class="row"><b>Goal</b> Education</div>
+        <span class="cta">Save This Post</span>
+      </div>
+      <!-- 6 -->
+      <div class="day"><span class="dnum">DAY 6</span>
+        <h4>Quick Leather Tip</h4>
+        <div class="row"><b>Format</b> Stories</div>
+        <div class="row"><b>Visual</b> Phone selfie video</div>
+        <div class="row"><b>Goal</b> Relationship Building</div>
+      </div>
+      <!-- 7 -->
+      <div class="day"><span class="dnum">DAY 7</span>
+        <h4>Bought For $100 Sold For $900</h4>
+        <div class="row"><b>Format</b> Reel</div>
+        <div class="row"><b>Hook</b> This Couch Made More Than Most Side Hustles</div>
+        <div class="row"><b>Visual</b> Before, repair process, sold result</div>
+        <div class="row"><b>Goal</b> Course Interest</div>
+        <span class="cta">DM "COURSE"</span>
+      </div>
+      <!-- 8 -->
+      <div class="day"><span class="dnum">DAY 8</span>
+        <h4>Q&amp;A Box</h4>
+        <div class="row"><b>Format</b> Stories</div>
+        <div class="row"><b>Question</b> Ask Me Anything About Leather Repair</div>
+        <div class="row"><b>Goal</b> Generate Conversations</div>
+      </div>
+      <!-- 9 -->
+      <div class="day"><span class="dnum">DAY 9</span>
+        <h4>3 Leather Repair Mistakes Costing Flippers Money</h4>
+        <div class="row"><b>Format</b> Carousel</div>
+        <div class="row"><b>Overlay</b> Avoid These Expensive Mistakes</div>
+        <div class="row"><b>Visual</b> Mistake examples</div>
+        <div class="row"><b>Goal</b> Education</div>
+        <span class="cta">Share With A Flipper</span>
+      </div>
+      <!-- 10 -->
+      <div class="day"><span class="dnum">DAY 10</span>
+        <h4>Client Project</h4>
+        <div class="row"><b>Format</b> Stories</div>
+        <div class="row"><b>Visual</b> Current repair</div>
+        <div class="row"><b>Goal</b> Authority</div>
+      </div>
+      <!-- 11 -->
+      <div class="day"><span class="dnum">DAY 11</span>
+        <h4>A Day In The Life Of A Leather Repair Expert</h4>
+        <div class="row"><b>Format</b> Reel</div>
+        <div class="row"><b>Hook</b> What 30 Years Of Experience Looks Like</div>
+        <div class="row"><b>Visual</b> Daily work montage</div>
+        <div class="row"><b>Goal</b> Personal Brand</div>
+        <span class="cta">Follow</span>
+      </div>
+      <!-- 12 -->
+      <div class="day"><span class="dnum">DAY 12</span>
+        <h4>Would You Repair This Couch?</h4>
+        <div class="row"><b>Format</b> Stories Poll</div>
+        <div class="row"><b>Options</b></div>
+        <div class="opts"><span>Yes</span><span>No</span></div>
+        <div class="row" style="margin-top:.5rem"><b>Goal</b> Engagement</div>
+      </div>
+      <!-- 13 -->
+      <div class="day"><span class="dnum">DAY 13</span>
+        <h4>Can You Learn Leather Repair From YouTube?</h4>
+        <div class="row"><b>Format</b> Carousel</div>
+        <div class="row"><b>Overlay</b> The Truth About Free Information</div>
+        <div class="row"><b>Visual</b> YouTube vs Real Experience</div>
+        <div class="row"><b>Goal</b> Overcome Objections</div>
+        <span class="cta">Comment Your Thoughts</span>
+      </div>
+      <!-- 14 -->
+      <div class="day"><span class="dnum">DAY 14</span>
+        <h4>Student Feedback</h4>
+        <div class="row"><b>Format</b> Stories</div>
+        <div class="row"><b>Visual</b> Screenshot testimonial</div>
+        <div class="row"><b>Goal</b> Social Proof</div>
+      </div>
+      <!-- 15 -->
+      <div class="day"><span class="dnum">DAY 15</span>
+        <h4>Would You Buy This Damaged Couch?</h4>
+        <div class="row"><b>Format</b> Reel</div>
+        <div class="row"><b>Hook</b> Most People Walk Away. I See Profit.</div>
+        <div class="row"><b>Visual</b> Thrift store or client project</div>
+        <div class="row"><b>Goal</b> Lead Generation</div>
+        <span class="cta">DM "PROFIT"</span>
+      </div>
+      <!-- 16 -->
+      <div class="day"><span class="dnum">DAY 16</span>
+        <h4>Before/After</h4>
+        <div class="row"><b>Format</b> Stories</div>
+        <div class="row"><b>Goal</b> Trust</div>
+      </div>
+      <!-- 17 -->
+      <div class="day"><span class="dnum">DAY 17</span>
+        <h4>How To Spot Repairable Damage In 30 Seconds</h4>
+        <div class="row"><b>Format</b> Carousel</div>
+        <div class="row"><b>Overlay</b> Quick Leather Inspection Guide</div>
+        <div class="row"><b>Visual</b> Damage examples</div>
+        <div class="row"><b>Goal</b> Education</div>
+        <span class="cta">Save This</span>
+      </div>
+      <!-- 18 -->
+      <div class="day"><span class="dnum">DAY 18</span>
+        <h4>Ask A Question</h4>
+        <div class="row"><b>Format</b> Stories</div>
+        <div class="row"><b>Question</b> What's Your Biggest Leather Challenge?</div>
+        <div class="row"><b>Goal</b> Lead Discovery</div>
+      </div>
+      <!-- 19 -->
+      <div class="day"><span class="dnum">DAY 19</span>
+        <h4>Before &amp; After Client Transformation</h4>
+        <div class="row"><b>Format</b> Reel</div>
+        <div class="row"><b>Hook</b> This Looked Unsellable</div>
+        <div class="row"><b>Visual</b> Transformation</div>
+        <div class="row"><b>Goal</b> Trust</div>
+        <span class="cta">Follow</span>
+      </div>
+      <!-- 20 -->
+      <div class="day"><span class="dnum">DAY 20</span>
+        <h4>Community Invitation</h4>
+        <div class="row"><b>Format</b> Stories</div>
+        <div class="row"><b>Visual</b> Private group screenshot</div>
+        <div class="row"><b>Goal</b> Community Growth</div>
+      </div>
+      <!-- 21 -->
+      <div class="day"><span class="dnum">DAY 21</span>
+        <h4>What Makes This Course Different?</h4>
+        <div class="row"><b>Format</b> Carousel</div>
+        <div class="row"><b>Overlay</b> Why Students Choose Structured Training</div>
+        <div class="row"><b>Visual</b> Course screenshots</div>
+        <div class="row"><b>Goal</b> Course Sales</div>
+        <span class="cta">DM "INFO"</span>
+      </div>
+      <!-- 22 -->
+      <div class="day"><span class="dnum">DAY 22</span>
+        <h4>Course FAQ</h4>
+        <div class="row"><b>Format</b> Stories</div>
+        <div class="row"><b>Goal</b> Handle Objections</div>
+      </div>
+      <!-- 23 -->
+      <div class="day"><span class="dnum">DAY 23</span>
+        <h4>Student Success Story</h4>
+        <div class="row"><b>Format</b> Reel</div>
+        <div class="row"><b>Hook</b> One Repair Changed Everything</div>
+        <div class="row"><b>Visual</b> Student project</div>
+        <div class="row"><b>Goal</b> Course Sales</div>
+        <span class="cta">Learn More</span>
+      </div>
+      <!-- 24 -->
+      <div class="day"><span class="dnum">DAY 24</span>
+        <h4>Behind The Scenes</h4>
+        <div class="row"><b>Format</b> Stories</div>
+        <div class="row"><b>Goal</b> Relationship Building</div>
+      </div>
+      <!-- 25 -->
+      <div class="day"><span class="dnum">DAY 25</span>
+        <h4>The Real Cost Of Not Knowing Leather Repair</h4>
+        <div class="row"><b>Format</b> Carousel</div>
+        <div class="row"><b>Overlay</b> What Ignoring This Skill Is Costing You</div>
+        <div class="row"><b>Visual</b> Profit comparison</div>
+        <div class="row"><b>Goal</b> Pain Point Awareness</div>
+        <span class="cta">Save This</span>
+      </div>
+      <!-- 26 -->
+      <div class="day"><span class="dnum">DAY 26</span>
+        <h4>Would You Add Leather Repair To Your Business?</h4>
+        <div class="row"><b>Format</b> Stories Poll</div>
+        <div class="row"><b>Options</b></div>
+        <div class="opts"><span>Yes</span><span>No</span></div>
+        <div class="row" style="margin-top:.5rem"><b>Goal</b> Lead Qualification</div>
+      </div>
+      <!-- 27 -->
+      <div class="day"><span class="dnum">DAY 27</span>
+        <h4>Most Profitable Repair I've Ever Done</h4>
+        <div class="row"><b>Format</b> Reel</div>
+        <div class="row"><b>Hook</b> One Job. Huge Profit.</div>
+        <div class="row"><b>Visual</b> Project breakdown</div>
+        <div class="row"><b>Goal</b> Business Opportunity</div>
+        <span class="cta">Comment "PROFIT"</span>
+      </div>
+      <!-- 28 -->
+      <div class="day"><span class="dnum">DAY 28</span>
+        <h4>Success Story</h4>
+        <div class="row"><b>Format</b> Stories</div>
+        <div class="row"><b>Goal</b> Social Proof</div>
+      </div>
+      <!-- 29 -->
+      <div class="day"><span class="dnum">DAY 29</span>
+        <h4>How To Start Making Money With Leather Repair</h4>
+        <div class="row"><b>Format</b> Carousel</div>
+        <div class="row"><b>Overlay</b> Beginner Roadmap</div>
+        <div class="row"><b>Visual</b> Step-by-step roadmap</div>
+        <div class="row"><b>Goal</b> Course Sales</div>
+        <span class="cta">DM "START"</span>
+      </div>
+      <!-- 30 -->
+      <div class="day"><span class="dnum">DAY 30</span>
+        <h4>Why I'm Teaching What Took Me 30 Years To Learn</h4>
+        <div class="row"><b>Format</b> Reel</div>
+        <div class="row"><b>Hook</b> I Don't Want You To Learn The Hard Way</div>
+        <div class="row"><b>Visual</b> Chris talking directly to camera</div>
+        <div class="row"><b>Goal</b> Authority + Course Sales</div>
+        <span class="cta">Visit Link In Bio</span>
+      </div>
+    </div>
+
+    <div class="grid g2 mt" style="align-items:start">
+      <div class="card stitched">
+        <span class="lab">Daily Story Framework</span>
+        <ul class="clean mtl">
+          <li><b style="color:var(--leather-deep)">Story 1:</b> Current Project</li>
+          <li><b style="color:var(--leather-deep)">Story 2:</b> Quick Tip</li>
+          <li><b style="color:var(--leather-deep)">Story 3:</b> Poll / Question</li>
+          <li><b style="color:var(--leather-deep)">Story 4:</b> Behind The Scenes</li>
+          <li><b style="color:var(--leather-deep)">Story 5:</b> CTA To Course / Community</li>
+        </ul>
+      </div>
+      <div class="card stitched">
+        <span class="lab profit">Monthly Objectives</span>
+        <ul class="check mtl">
+          <li>Increase Profile Visits</li>
+          <li>Increase Story Engagement</li>
+          <li>Increase DM Conversations</li>
+          <li>Increase Community Members</li>
+          <li>Increase Course Inquiries</li>
+          <li>Increase Course Sales</li>
+          <li>Build Authority With Furniture Flippers</li>
+          <li>Build Authority With Service Businesses</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPTIONS -->
+<section id="captions">
+  <div class="container">
+    <div class="sec-head">
+      <span class="secnum">SECTION 06</span>
+      <h2>Post Captions</h2>
+      <p class="sub">Full written captions for every feed post and reel in the calendar.</p>
+    </div>
+    <div class="grid" style="gap:1.4rem">
+
+      <div class="cap"><span class="dnum">DAY 1</span><h4>Why Most Furniture Flippers Ignore Their Most Profitable Opportunity</h4>
+        <p>Most furniture flippers walk right past damaged leather furniture.</p>
+        <p>Not because it can't be sold.</p>
+        <p>Because they don't know how much profit they're leaving behind.</p>
+        <p>The truth is that many buyers are scared of scratches, fading, worn cushions, and cracked leather.</p>
+        <p>That's exactly why opportunities exist.</p>
+        <p>When you know how to evaluate, repair, and improve leather furniture, you gain access to inventory that many others avoid.</p>
+        <p>What looks like a problem to most people often looks like profit to someone with the right skills.</p>
+        <p>Have you ever passed on a piece because the leather looked damaged?</p>
+        <p>Comment PROFIT if you'd like to see more examples.</p>
+        <div class="hashtags">#furnitureflipping #furniturereseller #sidehustle #leatherrepair #furniturebusiness #furniturerestoration #resellerbusiness</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 3</span><h4>Before &amp; After Leather Transformation</h4>
+        <p>This is why I never judge a piece by its current condition.</p>
+        <p>Most people see damage.</p>
+        <p>I see potential.</p>
+        <p>A lot of leather furniture can be dramatically improved when you know what to look for and how to approach the repair process.</p>
+        <p>These transformations don't just improve appearance.</p>
+        <p>They increase value.</p>
+        <p>Whether you're flipping furniture, running a service business, or simply learning a new skill, understanding leather repair can completely change the way you view damaged furniture.</p>
+        <p>Would you have bought this before the repair?</p>
+        <p>Let me know below.</p>
+        <div class="hashtags">#beforeandafter #leatherrepair #furnitureflip #furniturerestoration #leatherrestoration #furniturebusiness</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 5</span><h4>5 Signs A Leather Couch Is Worth Buying</h4>
+        <p>Not every leather couch is worth buying.</p>
+        <p>But many profitable pieces get overlooked because buyers don't know what to look for.</p>
+        <p>Here are 5 signs I look for:</p>
+        <ul class="check">
+          <li>Solid frame</li>
+          <li>Quality leather</li>
+          <li>Repairable damage</li>
+          <li>Good cushion structure</li>
+          <li>Strong resale demand</li>
+        </ul>
+        <p>The biggest mistake I see beginners make is focusing only on how the piece looks today.</p>
+        <p>Instead, focus on what it could become after repair.</p>
+        <p>That's where the opportunity is.</p>
+        <p>Save this post for your next furniture hunt.</p>
+        <div class="hashtags">#furnitureflipper #leatherfurniture #reseller #sidehustleideas #furnitureflip #leatherrepair</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 7</span><h4>Bought For $100 Sold For $900</h4>
+        <p>One of the reasons I love leather repair is because of situations like this.</p>
+        <p>A piece that most people ignored became an opportunity.</p>
+        <p>The difference wasn't luck.</p>
+        <p>The difference was knowledge.</p>
+        <p>Knowing:</p>
+        <ul class="clean">
+          <li>What to buy</li>
+          <li>What to avoid</li>
+          <li>What can be repaired</li>
+          <li>How to increase value</li>
+        </ul>
+        <p>These are skills that can completely change the profitability of a furniture flipping business.</p>
+        <p>That's why I teach furniture flippers and service businesses how to evaluate and repair leather the right way.</p>
+        <p>If you'd like more examples like this, send me a DM with the word PROFIT.</p>
+        <div class="hashtags">#furnitureflipping #sidehustle #furniturebusiness #leatherrepair #furniturereseller #profit</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 9</span><h4>3 Leather Repair Mistakes Costing Flippers Money</h4>
+        <p>I see these mistakes all the time.</p>
+        <p><b style="color:var(--leather-deep)">Mistake #1:</b> Passing on furniture too quickly.</p>
+        <p><b style="color:var(--leather-deep)">Mistake #2:</b> Assuming all leather damage is permanent.</p>
+        <p><b style="color:var(--leather-deep)">Mistake #3:</b> Trying random repairs without understanding the material.</p>
+        <p>The result?</p>
+        <p>Missed opportunities.</p>
+        <p>Lost profits.</p>
+        <p>And sometimes furniture that becomes impossible to restore properly.</p>
+        <p>The good news is that these mistakes are avoidable.</p>
+        <p>A little knowledge can save thousands of dollars over time.</p>
+        <p>Which mistake have you seen most often?</p>
+        <div class="hashtags">#furnitureflipping #furniturerestoration #leatherrepair #sidehustlebusiness #resellercommunity #furniturebusiness</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 11</span><h4>A Day In The Life Of A Leather Repair Expert</h4>
+        <p>People often see the finished result.</p>
+        <p>What they don't see are the years of experience behind every decision.</p>
+        <p>Every project starts with evaluating the leather, identifying the damage, determining the best repair approach, and creating a plan that produces the best result.</p>
+        <p>After more than 30 years in the industry, I've learned that successful leather repair isn't about guessing.</p>
+        <p>It's about understanding the material, understanding the process, and understanding how to create value.</p>
+        <p>This is a behind-the-scenes look at what a typical day looks like.</p>
+        <p>Would you like to see more of the actual repair process?</p>
+        <div class="hashtags">#leatherrepair #smallbusinessowner #furniturerestoration #dayinthelife #furniturerepair #leatherexpert</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 13</span><h4>Can You Learn Leather Repair From YouTube?</h4>
+        <p>I get this question often.</p>
+        <p>"Why would I buy a course when there are free videos on YouTube?"</p>
+        <p>The reality is that YouTube is great for information.</p>
+        <p>But information alone doesn't create results.</p>
+        <p>The biggest difference is having a proven process.</p>
+        <p>Instead of spending months or years trying to piece everything together, structured training gives you a roadmap.</p>
+        <p>You learn:</p>
+        <ul class="check">
+          <li>What works</li>
+          <li>What doesn't</li>
+          <li>What mistakes to avoid</li>
+          <li>How to get results faster</li>
+        </ul>
+        <p>You're not paying for information.</p>
+        <p>You're paying for experience, shortcuts, guidance, and a proven system.</p>
+        <p>What do you think is the biggest challenge when learning a new skill online?</p>
+        <div class="hashtags">#leatherrepair #onlinecourse #furnitureflipping #smallbusiness #sidehustle #leatherbusiness</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 15</span><h4>Would You Buy This Damaged Couch?</h4>
+        <p>Most people would walk away.</p>
+        <p>I would stop and take a closer look.</p>
+        <p>One of the most valuable skills in furniture flipping is learning how to see potential where others see problems.</p>
+        <p>A damaged leather couch doesn't automatically mean it's worthless.</p>
+        <p>In many cases, the opposite is true.</p>
+        <p>When other buyers avoid a piece because of cosmetic damage, opportunities often appear for those who understand repair and restoration.</p>
+        <p>The question isn't:</p>
+        <p>"Does it have damage?"</p>
+        <p>The question is:</p>
+        <p>"Can the damage be repaired profitably?"</p>
+        <p>Would you buy this couch or leave it behind?</p>
+        <p>Comment BUY or PASS.</p>
+        <div class="hashtags">#furnitureflipping #furnitureflip #leatherrepair #sidehustle #resellerbusiness #furniturereseller</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 17</span><h4>How To Spot Repairable Damage In 30 Seconds</h4>
+        <p>One of the biggest mistakes beginners make is assuming all damage is the same.</p>
+        <p>It's not.</p>
+        <p>Some damage is cosmetic.</p>
+        <p>Some damage is structural.</p>
+        <p>Learning the difference can save you a lot of money and help you identify profitable opportunities.</p>
+        <p>When evaluating leather furniture, I look at:</p>
+        <ul class="clean">
+          <li>Tears and cuts</li>
+          <li>Surface wear</li>
+          <li>Color loss</li>
+          <li>Cushion condition</li>
+          <li>Overall structure</li>
+        </ul>
+        <p>Many pieces that appear heavily damaged are actually excellent candidates for repair.</p>
+        <p>The more pieces you evaluate, the easier it becomes to identify opportunities quickly.</p>
+        <p>Save this post for your next furniture search.</p>
+        <div class="hashtags">#leatherrepair #furnitureflip #furniturerestoration #furniturebusiness #sidehustleideas</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 19</span><h4>Before &amp; After Client Transformation</h4>
+        <p>This project is a great reminder of why I love what I do.</p>
+        <p>The transformation isn't just about making furniture look better.</p>
+        <p>It's about restoring value.</p>
+        <p>It's about helping clients save furniture they thought was beyond repair.</p>
+        <p>And it's about proving that appearance can be changed dramatically when the right process is used.</p>
+        <p>Many of the projects I work on initially look like they have no future.</p>
+        <p>A little knowledge, the right tools, and the right repair process can completely change the outcome.</p>
+        <p>Would you have guessed these were the same piece?</p>
+        <div class="hashtags">#beforeandafter #leatherrestoration #leatherrepair #furniturerestoration #furniturerepair #transformation</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 20</span><h4>Join Our Leather Repair Community</h4>
+        <p>One of the best ways to learn any skill is by surrounding yourself with people who are already doing it.</p>
+        <p>That's exactly why I created our private community.</p>
+        <p>Inside you'll find:</p>
+        <ul class="check">
+          <li>People learning leather repair</li>
+          <li>Furniture flippers</li>
+          <li>Resellers</li>
+          <li>Business owners</li>
+          <li>Real discussions</li>
+          <li>Questions and answers</li>
+          <li>Shared experiences</li>
+        </ul>
+        <p>Whether you're just getting started or already working in the industry, having access to a community can help shorten the learning curve.</p>
+        <p>If you're interested in joining, send me a DM with the word COMMUNITY and I'll send you more information.</p>
+        <div class="hashtags">#leatherrepair #community #furnitureflipping #smallbusinessowner #furniturebusiness #sidehustle</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 21</span><h4>What Makes This Course Different?</h4>
+        <p>There is no shortage of information online.</p>
+        <p>You can find YouTube videos, blog posts, forums, and AI-generated answers about almost anything.</p>
+        <p>So why do people invest in training?</p>
+        <p>Because information and implementation are two very different things.</p>
+        <p>This course isn't just a collection of tips.</p>
+        <p>It's a step-by-step system built from more than 30 years of real-world leather repair experience.</p>
+        <p>Instead of guessing your way through projects, you'll learn:</p>
+        <ul class="check">
+          <li>What products to use</li>
+          <li>What repairs to avoid</li>
+          <li>How to evaluate leather correctly</li>
+          <li>How to increase profitability</li>
+        </ul>
+        <p>The goal isn't simply learning leather repair.</p>
+        <p>The goal is learning how to use it to create income opportunities.</p>
+        <p>DM "INFO" if you'd like more details.</p>
+        <div class="hashtags">#leatherrepair #furnitureflipping #onlinecourse #smallbusiness #sidehustle</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 23</span><h4>Student Success Story</h4>
+        <p>One of my favorite parts about teaching is seeing students apply what they've learned in the real world.</p>
+        <p>The goal has never been to simply complete a course.</p>
+        <p>The goal is confidence.</p>
+        <p>Confidence to evaluate furniture.</p>
+        <p>Confidence to perform repairs.</p>
+        <p>Confidence to create opportunities that weren't possible before.</p>
+        <p>Every successful project starts with learning the fundamentals and taking action.</p>
+        <p>Seeing students use these skills in their own businesses is incredibly rewarding.</p>
+        <p>If you've ever considered adding leather repair to your skill set, there's never been a better time to start.</p>
+        <div class="hashtags">#studentsuccess #leatherrepair #furnitureflipping #businessgrowth #sidehustle</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 25</span><h4>The Real Cost Of Not Knowing Leather Repair</h4>
+        <p>Most people focus on the cost of learning.</p>
+        <p>Very few people focus on the cost of not learning.</p>
+        <p>Think about it.</p>
+        <p>How many profitable pieces have been passed over because the damage looked intimidating?</p>
+        <p>How many opportunities were missed because the repair process wasn't understood?</p>
+        <p>How many potential customers were lost because a service couldn't be offered?</p>
+        <p>Those costs add up over time.</p>
+        <p>The right skills don't just help you complete repairs.</p>
+        <p>They help you recognize opportunities that others miss.</p>
+        <p>Sometimes the most expensive decision isn't investing in education.</p>
+        <p>It's staying exactly where you are.</p>
+        <p>What opportunities do you think you're currently missing?</p>
+        <div class="hashtags">#businessgrowth #furnitureflip #leatherrepair #entrepreneur #sidehustle</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 27</span><h4>Most Profitable Repair I've Ever Done</h4>
+        <p>People often ask me:</p>
+        <p>"What's the most profitable repair you've ever done?"</p>
+        <p>The truth is, the biggest profits don't usually come from the most complicated projects.</p>
+        <p>They come from understanding value.</p>
+        <p>Knowing what to buy.</p>
+        <p>Knowing what can be repaired.</p>
+        <p>Knowing how to position the finished result.</p>
+        <p>Over the years I've learned that experience allows you to see opportunities that others overlook.</p>
+        <p>That's one of the biggest reasons I teach.</p>
+        <p>To help people shorten the learning curve and avoid years of trial and error.</p>
+        <p>Have you ever come across a piece that turned out to be worth far more than you expected?</p>
+        <div class="hashtags">#furnitureflipping #leatherrepair #entrepreneurship #businessowner #profit</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 29</span><h4>How To Start Making Money With Leather Repair</h4>
+        <p>If you're completely new to leather repair, the path is actually simpler than most people think.</p>
+        <p><b style="color:var(--leather-deep)">Step 1:</b> Learn how to identify different types of leather.</p>
+        <p><b style="color:var(--leather-deep)">Step 2:</b> Understand common damage and repair options.</p>
+        <p><b style="color:var(--leather-deep)">Step 3:</b> Practice on low-risk projects.</p>
+        <p><b style="color:var(--leather-deep)">Step 4:</b> Learn how to evaluate profitability.</p>
+        <p><b style="color:var(--leather-deep)">Step 5:</b> Develop a repeatable process.</p>
+        <p>Whether your goal is furniture flipping, adding services to an existing business, or starting something entirely new, leather repair can create opportunities that many people never consider.</p>
+        <p>The key is starting with the right foundation.</p>
+        <p>Everyone starts somewhere.</p>
+        <div class="hashtags">#leatherrepair #sidehustle #businessopportunity #furnitureflipping #entrepreneur</div>
+      </div>
+
+      <div class="cap"><span class="dnum">DAY 30</span><h4>Why I'm Teaching What Took Me 30 Years To Learn</h4>
+        <p>When I first started working with leather, there wasn't a roadmap.</p>
+        <p>There wasn't a course.</p>
+        <p>There wasn't a community.</p>
+        <p>There wasn't someone showing me exactly what to do.</p>
+        <p>Most of what I learned came through experience, mistakes, testing, and years of hands-on work.</p>
+        <p>Today, I have the opportunity to help others learn much faster than I did.</p>
+        <p>That's why I created training programs, free resources, and a community for people who want to develop these skills.</p>
+        <p>My goal isn't just to teach leather repair.</p>
+        <p>My goal is to help people create more opportunities for themselves, whether that's through furniture flipping, business growth, or an additional income stream.</p>
+        <p>Thank you for following along this journey.</p>
+        <p>If you've been thinking about learning leather repair, send me a DM and let's talk about your goals.</p>
+        <div class="hashtags">#leatherrepair #furnitureflipping #smallbusinessowner #entrepreneur #businessgrowth #leatherhelp</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DM SYSTEM -->
+<section id="dms">
+  <div class="container">
+    <div class="sec-head">
+      <span class="secnum">SECTION 07</span>
+      <h2>DM System, Lead Tracker &amp; Outreach Workflow</h2>
+      <p class="sub">Eight conversation scripts that move a commenter from first reply to course introduction.</p>
+    </div>
+
+    <div class="scripts">
+      <div class="script">
+        <div class="shead"><div class="snum">1</div><h4>POST COMMENTER</h4></div>
+        <p class="trig"><b>Trigger:</b> Someone comments on a post.<br><b>Example:</b> "I've always wanted to learn this."</p>
+        <div class="branch">DM</div>
+        <div class="bubble">Hey [Name],
+Thanks for your comment!
+I'm curious, are you currently flipping furniture or are you looking to get started?</div>
+        <div class="branch">If they are a furniture flipper</div>
+        <div class="bubble">That's awesome.
+How long have you been flipping furniture?</div>
+        <div class="branch">If they are new</div>
+        <div class="bubble">Very cool.
+What got you interested in furniture flipping?</div>
+      </div>
+
+      <div class="script">
+        <div class="shead"><div class="snum">2</div><h4>AFTER THEY RESPOND</h4></div>
+        <div class="branch">Furniture Flipper</div>
+        <div class="bubble">One thing Chris teaches is how to identify leather furniture that most buyers avoid but can often be turned into profitable opportunities.
+Have you ever purchased or considered purchasing leather furniture before?</div>
+        <div class="branch">If YES</div>
+        <div class="bubble">What has been your biggest challenge with leather pieces?</div>
+        <div class="branch warm">If NO</div>
+        <div class="bubble">That's actually very common.
+Most people avoid leather because they aren't sure what's repairable and what's not.</div>
+      </div>
+
+      <div class="script">
+        <div class="shead"><div class="snum">3</div><h4>FREE RESOURCE OFFER</h4></div>
+        <div class="bubble">Based on what you're saying, I think you might find some of Chris's free resources helpful.
+He has a free PDF and several free training videos.
+Would you like me to send them over?</div>
+        <div class="branch">If YES — Send</div>
+        <ul class="check"><li>Free PDF</li><li>Free Video</li><li>Podcast Link</li></ul>
+      </div>
+
+      <div class="script">
+        <div class="shead"><div class="snum">4</div><h4>FOLLOW-UP (3 DAYS LATER)</h4></div>
+        <div class="bubble">Hey [Name],
+Just checking in.
+Did you get a chance to look through the free resources Chris shared?
+Any questions so far?</div>
+      </div>
+
+      <div class="script">
+        <div class="shead"><div class="snum">5</div><h4>FOLLOW-UP (7 DAYS LATER)</h4></div>
+        <div class="bubble">Hey [Name],
+Curious what stood out most from the free resources?
+Are you looking at leather repair primarily for:
+1. Furniture flipping
+2. Your current business
+3. A new side business</div>
+      </div>
+
+      <div class="script">
+        <div class="shead"><div class="snum">6</div><h4>COURSE INTRODUCTION</h4></div>
+        <p class="trig">After they've engaged:</p>
+        <div class="bubble">Based on everything you've shared, I think you'd probably get a lot of value from Chris's full training.
+It goes much deeper into identifying profitable pieces, repair processes, and building confidence with leather projects.
+Would you like me to send over the details?</div>
+      </div>
+
+      <div class="script">
+        <div class="shead"><div class="snum">7</div><h4>COURSE OBJECTION</h4></div>
+        <p class="trig">"It's too expensive."</p>
+        <div class="bubble">Totally understandable.
+One thing Chris often talks about is looking at the course as an investment rather than an expense.
+Many students are interested because a single profitable project can often recover a significant portion of the investment.
+Of course everyone's situation is different, but that's usually how many students look at it.</div>
+      </div>
+
+      <div class="script">
+        <div class="shead"><div class="snum">8</div><h4>CONSULTATION CTA</h4></div>
+        <p class="trig">For people showing strong interest:</p>
+        <div class="bubble">Chris also offers consultation calls where he can learn more about your goals and answer questions directly.
+Would you like me to send you his calendar link?</div>
+      </div>
+    </div>
+
+    <h3 class="block">Lead Tracker — Google Sheet Columns</h3>
+    <div class="cols">
+      <div class="col-card"><div class="cname">Date Added</div></div>
+      <div class="col-card"><div class="cname">Instagram Username</div></div>
+      <div class="col-card"><div class="cname">Full Name</div></div>
+      <div class="col-card"><div class="cname">Profile Link</div></div>
+      <div class="col-card"><div class="cname">Target Category</div><div class="opts2"><span>Furniture Flipper</span><span>Furniture Reseller</span><span>Detailer</span><span>Furniture Store</span><span>Service Business</span><span>Other</span></div></div>
+      <div class="col-card"><div class="cname">Lead Source</div><div class="opts2"><span>Comment</span><span>DM</span><span>Story Reply</span><span>Manual Outreach</span><span>Referral</span><span>Collaboration</span></div></div>
+      <div class="col-card"><div class="cname">Interest Level</div><div class="opts2"><span>Cold</span><span>Warm</span><span>Hot</span></div></div>
+      <div class="col-card"><div class="cname">Resources Sent</div><div class="opts2"><span>PDF</span><span>Video</span><span>Podcast</span><span>Community</span></div></div>
+      <div class="col-card"><div class="cname">Course Discussed</div><div class="opts2"><span>Yes / No</span></div></div>
+      <div class="col-card"><div class="cname">Consultation Offered</div><div class="opts2"><span>Yes / No</span></div></div>
+      <div class="col-card" style="grid-column:span 2"><div class="cname">Current Status</div><div class="opts2"><span>New Lead</span><span>Engaged</span><span>Resource Sent</span><span>Follow-Up</span><span>Interested</span><span>Consult Scheduled</span><span>Course Purchased</span><span>Not Interested</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTREACH -->
+<section id="outreach">
+  <div class="container">
+    <div class="sec-head">
+      <span class="secnum">SECTION 08</span>
+      <h2>Outreach Workflow</h2>
+    </div>
+
+    <div class="grid g2" style="align-items:start">
+      <div class="card stitched">
+        <span class="lab profit">Daily Target</span>
+        <p style="font-family:'Bitter',serif;font-weight:800;font-size:1.6rem;color:var(--leather-deep);margin-top:.3rem">20 New Prospects</p>
+      </div>
+      <div class="card stitched">
+        <span class="lab">Target Account Types</span>
+        <ul class="clean mtl">
+          <li>Furniture Flippers</li>
+          <li>Furniture Resellers</li>
+          <li>Furniture Stores</li>
+          <li>Auto Detailers</li>
+          <li>Marine Detailers</li>
+          <li>Furniture Restoration Businesses</li>
+          <li>Cleaning Businesses</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="block">The 5-Step Process</h3>
+    <div class="steps">
+      <div class="step"><span class="snum">01</span><h4>Find Target Account</h4><p>Review:</p><ul><li>Bio</li><li>Posts</li><li>Followers</li><li>Activity</li></ul></div>
+      <div class="step"><span class="snum">02</span><h4>Engage Naturally</h4><p>Like:</p><ul><li>3 Recent Posts</li></ul><p style="margin-top:.5rem">Leave:</p><ul><li>1 Genuine Comment</li></ul></div>
+      <div class="step"><span class="snum">03</span><h4>Follow Account</h4></div>
+      <div class="step"><span class="snum">04</span><h4>Wait For Interaction</h4><p>If they engage back:</p><ul><li>Move to DM.</li></ul></div>
+      <div class="step"><span class="snum">05</span><h4>DM</h4><div class="bubble" style="background:rgba(255,255,255,.08);color:var(--white);margin-top:.4rem">Hey [Name],
+Love what you're doing with your furniture projects.
+How long have you been flipping furniture?</div></div>
+    </div>
+
+    <div class="card stitched mt">
+      <span class="lab">Good Comment Examples</span>
+      <ul class="clean mtl">
+        <li>Great transformation.</li>
+        <li>The leather turned out fantastic.</li>
+        <li>Really nice flip.</li>
+        <li>Love seeing projects like this.</li>
+        <li>That resale value increase must have been huge.</li>
+      </ul>
+    </div>
+
+    <h3 class="block">Collaboration Strategy</h3>
+    <div class="grid g2" style="align-items:start">
+      <div class="card stitched">
+        <span class="lab profit">Monthly Goal</span>
+        <p style="font-family:'Bitter',serif;font-weight:800;font-size:1.5rem;color:var(--leather-deep);margin-top:.3rem">2 Collaboration Opportunities</p>
+        <span class="lab mt">Target Partners</span>
+        <ul class="clean mtl">
+          <li>Furniture Flippers</li>
+          <li>Furniture Resellers</li>
+          <li>Furniture Restoration Creators</li>
+          <li>Cleaning Professionals</li>
+          <li>Auto Detailers</li>
+          <li>Marine Detailers</li>
+          <li>Home Service Creators</li>
+        </ul>
+      </div>
+      <div class="card stitched">
+        <span class="lab">Collaboration DM</span>
+        <div class="bubble" style="margin-top:.6rem">Hey [Name],
+I've been following your content and really enjoy what you're doing.
+Chris Repp from LeatherHelp specializes in leather repair training and works with furniture flippers and service businesses.
+I think our audiences have a lot of overlap.
+Would you be open to exploring a collaboration sometime?</div>
+        <span class="lab mt">Collaboration Ideas</span>
+        <div class="terms mtl">
+          <span class="term">Instagram Live</span><span class="term">Joint Reel</span><span class="term">Case Study Review</span><span class="term">Q&amp;A Session</span><span class="term">Guest Interview</span><span class="term">Shared Giveaway</span><span class="term">Community Feature</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="block">Monthly KPI Report</h3>
+    <div class="kpi">
+      <span>New Followers</span><span>Profile Visits</span><span>DM Conversations</span><span>Warm Leads</span><span>Resources Sent</span><span>Community Members Added</span><span>Consultation Calls Booked</span><span>Course Inquiries</span><span>Course Sales</span><span>Top Performing Content</span><span>Best Lead Source</span><span>Best Collaboration Opportunity</span><span>Growth Opportunities</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand" style="color:var(--white)"><span class="dot"></span>LeatherHelp</div>
+  <p>Instagram Growth Playbook · Chris Repp | Leather Repair</p>
+</footer>
+
+</div>
+
+<script>
+  // scroll reveal
+  const els=document.querySelectorAll('section .card, .day, .cap, .script, .acct, .hl-item, .step, .col-card, .phone, .slide');
+  els.forEach(e=>e.classList.add('reveal'));
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.08});
+  els.forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
